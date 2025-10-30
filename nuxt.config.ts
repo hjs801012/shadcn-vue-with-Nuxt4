@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
+import { fileURLToPath } from 'node:url'
+import { dirname, resolve } from 'node:path'
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -12,8 +15,8 @@ export default defineNuxtConfig({
   ],
   css: ['./app/assets/css/main.css'],
   alias: {
-    '@': '/Users/hjs801012/Desktop/Work/Project/202507_M-CRM2/source3/app',
-    '~': '/Users/hjs801012/Desktop/Work/Project/202507_M-CRM2/source3',
+    '@': resolve(__dirname, 'app'),
+    '~': resolve(__dirname, '.'),
   },
   vite: {
     plugins: [
